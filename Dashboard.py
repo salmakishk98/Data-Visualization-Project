@@ -35,7 +35,7 @@ np.random.seed(44)
 pio.renderers.default = 'notebook'
 
 # read data
-img = "CatImagePrediction\Ginger Cat - Sticker or Print  by peg-333 _ Redbubble.jpg"
+img = "CatImagePrediction\image.jpg"
 with open(img, 'rb') as f:
     img_data = f.read()
 img_card_base64 = base64.b64encode(img_data).decode('utf-8')
