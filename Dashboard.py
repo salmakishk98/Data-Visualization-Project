@@ -39,7 +39,7 @@ np.random.seed(44)
 pio.renderers.default = 'notebook'
 
 # read data
-img = r"C:\Users\salmakishk\OneDrive - Fculty Of Engineering (Tanta University)\Desktop\visiualizationProject\CatImagePrediction\Ginger Cat - Sticker or Print  by peg-333 _ Redbubble.jpg"
+img = r"CatImagePrediction\Ginger Cat - Sticker or Print  by peg-333 _ Redbubble.jpg"
 with open(img, 'rb') as f:
     img_data = f.read()
 img_card_base64 = base64.b64encode(img_data).decode('utf-8')
@@ -57,16 +57,16 @@ breeds= ['Abyssinian',
  'Siamese',
  'Sphynx']
 
-all_model_data=pd.read_csv(r"C:\Users\salmakishk\OneDrive - Fculty Of Engineering (Tanta University)\Desktop\visiualizationProject\final_used_data\all_models_data.csv")
+all_model_data=pd.read_csv(r"final_used_data\all_models_data.csv")
 all_model_data["model_name"] = all_model_data["model_name"].apply(lambda x : str(x).split(".")[0]+"."+str(x).split(".")[1])
 models = list(all_model_data["model_name"].unique())
-model_path = r"C:\Users\salmakishk\OneDrive - Fculty Of Engineering (Tanta University)\Desktop\visiualizationProject\Models_h5"
+model_path = r"Models_h5"
 # cats=pd.read_excel("catex.xlsx")
-cats=pd.read_excel(r"C:\Users\salmakishk\OneDrive - Fculty Of Engineering (Tanta University)\Desktop\visiualizationProject\final_used_data\size and hair.xlsx")
+cats=pd.read_excel(r"final_used_data\size and hair.xlsx")
 cats=cats.sort_values(by="Breed").reset_index()
-cats_info=pd.read_csv(r"C:\Users\salmakishk\OneDrive - Fculty Of Engineering (Tanta University)\Desktop\visiualizationProject\final_used_data\about_the_cat.csv")
-cats_imgs=pd.read_csv(r"C:\Users\salmakishk\OneDrive - Fculty Of Engineering (Tanta University)\Desktop\visiualizationProject\final_used_data\cat_images.csv")
-numeric_columns=pd.read_excel(r"C:\Users\salmakishk\OneDrive - Fculty Of Engineering (Tanta University)\Desktop\visiualizationProject\final_used_data\final_cat.xlsx")
+cats_info=pd.read_csv(r"final_used_data\about_the_cat.csv")
+cats_imgs=pd.read_csv(r"final_used_data\cat_images.csv")
+numeric_columns=pd.read_excel(r"final_used_data\final_cat.xlsx")
 numeric=numeric_columns.columns.tolist()[-12:]
 cats[numeric]=numeric_columns[numeric]
 cats.head()
@@ -179,8 +179,9 @@ ig=ex.bar(bar_df.sort_values(by="Life Expectancy",ascending=False).tail(20),x="L
 
 
 # Main code for dashboard 😎
-app=Dash(external_stylesheets=[dbc.themes.LUMEN],suppress_callback_exceptions=True) #suppress_callback_exceptions=True
 
+app = Dash(__name__external_stylesheets=[dbc.themes.LUMEN],suppress_callback_exceptions=True) #suppress_callback_exceptions=True
+server = app.server
 app.layout=html.Div(children=[
     
             html.H1(html.B("😸Purrfect Analytics:A Dashboard for Exploring the World of Cats"), style={'color': 'black', 'fontSize': 25, 'textAlign':'center','font-family':'Courier New, monospace','margin':'20px'}),
