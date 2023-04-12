@@ -10,3 +10,4 @@ pybase64
 pillow
 tensorflow
 keras
+dash-daq
