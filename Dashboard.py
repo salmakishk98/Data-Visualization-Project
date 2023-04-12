@@ -179,7 +179,6 @@ ig=ex.bar(bar_df.sort_values(by="Life Expectancy",ascending=False).tail(20),x="L
 
 
 # Main code for dashboard 😎
-
 app = Dash(__name__external_stylesheets=[dbc.themes.LUMEN],suppress_callback_exceptions=True) #suppress_callback_exceptions=True
 server = app.server
 app.layout=html.Div(children=[
