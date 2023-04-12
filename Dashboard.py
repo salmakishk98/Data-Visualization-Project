@@ -10,14 +10,10 @@ from dash.exceptions import PreventUpdate
 import matplotlib.pyplot as plt
 import plotly.io as pio
 import base64
-import requests
-import io
 import os
-import zipfile
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import random
 from PIL import Image
 #tansorflow libraries
 from tensorflow.keras.preprocessing import image
@@ -179,7 +175,7 @@ ig=ex.bar(bar_df.sort_values(by="Life Expectancy",ascending=False).tail(20),x="L
 
 
 # Main code for dashboard 😎
-app = Dash(__name__external_stylesheets=[dbc.themes.LUMEN],suppress_callback_exceptions=True) #suppress_callback_exceptions=True
+app = Dash(__name__,external_stylesheets=[dbc.themes.LUMEN],suppress_callback_exceptions=True) #suppress_callback_exceptions=True
 server = app.server
 app.layout=html.Div(children=[
     
