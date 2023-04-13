@@ -35,7 +35,7 @@ np.random.seed(44)
 pio.renderers.default = 'notebook'
 
 # read data
-img = "CatImagePrediction\image.jpg"
+img = "CatImagePrediction/image.jpg"
 with open(img, 'rb') as f:
     img_data = f.read()
 img_card_base64 = base64.b64encode(img_data).decode('utf-8')
@@ -53,16 +53,16 @@ breeds= ['Abyssinian',
  'Siamese',
  'Sphynx']
 
-all_model_data=pd.read_csv("final_used_data\all_models_data.csv")
+all_model_data=pd.read_csv("final_used_data/all_models_data.csv")
 all_model_data["model_name"] = all_model_data["model_name"].apply(lambda x : str(x).split(".")[0]+"."+str(x).split(".")[1])
 models = list(all_model_data["model_name"].unique())
 model_path = "Models_h5"
 # cats=pd.read_excel("catex.xlsx")
-cats=pd.read_excel("final_used_data\size and hair.xlsx")
+cats=pd.read_excel("final_used_data/size and hair.xlsx")
 cats=cats.sort_values(by="Breed").reset_index()
-cats_info=pd.read_csv("final_used_data\about_the_cat.csv")
-cats_imgs=pd.read_csv("final_used_data\cat_images.csv")
-numeric_columns=pd.read_excel("final_used_data\final_cat.xlsx")
+cats_info=pd.read_csv("final_used_data/about_the_cat.csv")
+cats_imgs=pd.read_csv("final_used_data/cat_images.csv")
+numeric_columns=pd.read_excel("final_used_data/final_cat.xlsx")
 numeric=numeric_columns.columns.tolist()[-12:]
 cats[numeric]=numeric_columns[numeric]
 cats.head()
