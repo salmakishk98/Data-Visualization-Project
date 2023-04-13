@@ -12,3 +12,4 @@ tensorflow
 keras
 dash-daq
 openpyxl
+onednn-cpu-gomp
