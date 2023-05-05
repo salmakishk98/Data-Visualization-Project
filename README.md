@@ -22,12 +22,6 @@ used pre-trained model inception3
 and used three different optimization methods RMSprop, Adam, and SGD, combined with different learning rates [0.1, 0.01, 0.001]
 and trained different combinations between these parameters to get 9 result sets for accuracy and loss, plotted the learning curve for both of them to compare the results of these different models
 
-# DEMO:
-https://drive.google.com/file/d/1FA-iN7NqNvSvXChp83WQ2g8UbwIw-z0A/view
-
-
-
-
 
 
 ●	Phase Three→ Designing the dashboard:
@@ -39,4 +33,7 @@ we used a toggle switch to change the mode of our dashboard from insights to pre
 we used dash core components and dash bootstrap components in implementing the design and several callback functions 
 to update the dashboard. In the insights mode, we display the top 20 most populous breeds in a bar plot and their respective analytics regarding weight, life expectancy, average body length, and height. We also created an interactive treemap to show the origin of the country for each breed. and their distribution in all continents, with a displayed image of the cat
  For the prediction mode, we used a pre-trained convolutional neural network model to predict the breed of cats image uploaded by users.
+ 
+ # DEMO:
+https://drive.google.com/file/d/1FA-iN7NqNvSvXChp83WQ2g8UbwIw-z0A/view
 
