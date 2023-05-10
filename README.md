@@ -35,5 +35,5 @@ to update the dashboard. In the insights mode, we display the top 20 most populo
  For the prediction mode, we used a pre-trained convolutional neural network model to predict the breed of cats image uploaded by users.
  
  # DEMO:
-https://drive.google.com/file/d/1FA-iN7NqNvSvXChp83WQ2g8UbwIw-z0A/view
+https://drive.google.com/file/d/1FA-iN7NqNvSvXChp83WQ2g8UbwIw-z0A/view 
 
